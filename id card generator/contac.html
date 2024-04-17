@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>Document</title>
+<style>
+*{
+  margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+/* ................................ */
+
+body{
+
+height: 80vh;
+}
+/* outputs .......... */
+.main{
+/* border: 3px solid palevioletred; */
+height: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 10px;
+
+}
+
+.form-output{
+border: 3px solid black;
+width: 50%;
+height: 50%;
+border-radius: 23px;
+background-image: url('https://img.freepik.com/premium-vector/geometric-gradient-technology-background_23-2149110132.jpg?size=626&ext=jpg&ga=GA1.1.672215249.1682244109&semt=ais'); 
+display: none;
+
+}
+.form-output h2{
+text-align: center;
+margin: 10px 0;
+color: whitesmoke;
+}
+.form-output address{
+text-align: center;
+text-decoration: none;
+color: rgb(207, 63, 121);
+}
+.form-output img{
+border: 3px solid rgb(205, 201, 201);
+width: 70px;
+height: 70px;
+border-radius: 30%;
+}
+.form-content{
+/* border:  3px solid rgb(231, 3, 94);; */
+width: 80%;
+margin: 15px auto;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.form-details h3,h4,h5{ 
+  margin: 5px 0; 
+  color: aliceblue;                                                       
+
+}
+
+/* inputs............ */
+.form-box{
+border: 3px solid blue;
+width: 30%;
+height: 100%;
+border-radius: 45px;
+padding: 10px;
+background-image: url('https://img.freepik.com/free-vector/futuristic-background-design_23-2148503793.jpg?size=626&ext=jpg&ga=GA1.1.672215249.1682244109&semt=ais');
+background-color: aliceblue;
+}
+.form-box input{
+width: 100%;
+height: 10%;
+margin: 10px auto;
+padding: 5px;
+border-radius: 20px;
+
+}
+
+.form-box h2{
+text-align: center;
+margin: 10px 0;
+}
+.form-box button{
+width: 100%;
+font-size: 20px;
+padding: 8px;
+border-radius: 15px;
+margin-top: 20px;
+background-color:rgb(120, 120, 148);
+}
+</style>
+
+
+</head>
+<body>
+<!-- inputs ke liye -->
+
+ <h1 style="text-align: center;"> Restaurant Reservation Form</h1>
+<hr style="margin-top: 20px;">
+<img 
+class="go-back"
+style="height: 60px;"
+src="https://cdn-icons-png.flaticon.com/128/9417/9417126.png" alt=""> 
+
+
+<div class="main">
+  
+
+
+<div class="form-box">               
+ <h2  style="text-align: center; color: aliceblue;">Enter Details</h2>
+<input type="text" placeholder="User-Name" id="inpname">
+<input type="email" placeholder="User-E-mail"id="inpjob">
+<input type="number" placeholder="Phone No." id="inpaddress" >
+ <input type="text" placeholder="Number of room" id="inpbg">
+<input type="text" placeholder="User-Prifile-Image" id="inpimg">
+<button class="btn">Register</button>                                          
+</div>
+
+<!-- outputs ke liye -->
+<div class="form-output">
+ <h2>Booked Room</h2>
+  <address>Kauriram Gorakhpur Uttar Pradesh, pin - 273413</address>
+ <hr>
+<div class="form-content">
+   <img class="userimg" src="https://fearingsrestaurant.com/wp-content/uploads/2017/08/Deans-Kitchen_web.jpg"  alt=""> 
+  <div class="form-details">
+ <h3 class="username">Name = </h3>
+ <h4 class="userjob">Designation</h4>
+ <h4 class="useraddress">Address = </h4>
+  <h5 class="userbg">Blood Group = </h5>
+  </div>
+ </div> 
+
+</div>
+
+</div>
+
+
+<!-- javascript ka work................................... -->
+<script>
+
+document.querySelector('.go-back').style.visibility='hidden'
+document.querySelector('.go-back').addEventListener('click',function() {
+ document.querySelector('.go-back').style.visibility='hidden'
+ document.querySelector('.form-output').style.display='none'
+document.querySelector('.form-box').style.display='inline-block'
+})
+
+//  all output ........................................................................
+let userimg= document.querySelector('.userimg');
+let username= document.querySelector('.username');
+let userjob= document.querySelector('.userjob');
+let userbg= document.querySelector('.userbg');
+let useraddress= document.querySelector('.useraddress');
+
+//  all input fields with button................................................................................................
+let inpname = document.getElementById('inpname')
+let inpjob = document.getElementById('inpjob')
+let inpaddress = document.getElementById('inpaddress')
+let inpbg = document.getElementById('inpbg')
+let inpimg = document.getElementById('inpimg')
+let btn = document.querySelector('.btn')
+
+// disbaled..................................................................................
+
+if(inpname.value.length > 0) btn.disabled=false
+
+btn.addEventListener('click',function(){
+   
+username.textContent = inpname.value
+userjob.textContent = inpjob.value
+useraddress.textContent = inpaddress.value
+userbg.textContent = inpbg.value
+userimg.src = inpimg.value
+
+document.querySelector('.go-back').style.visibility='visible'
+document.querySelector('.form-output').style.display='inline-block'
+document.querySelector('.form-box').style.display='none'
+
+})
+
+
+
+
+</script>
+                              
+</body>
+</html>
